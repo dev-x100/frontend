@@ -7,8 +7,9 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const pathname = usePathname();
   const isAdmin = pathname.startsWith("/admin");
   const isDashboard = pathname.startsWith("/dashboard");
+  const isLogin = pathname.startsWith("/login");
 
-  if (isAdmin || isDashboard) {
+  if (isAdmin || isDashboard || isLogin) {
     return <>{children}</>;
   }
 
