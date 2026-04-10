@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css";
-import Navbar from "@/components/site/Navbar";
-import Footer from "@/components/site/Footer";
+import ConditionalLayout from "@/components/site/ConditionalLayout";
+import AuthProvider from "@/context/AuthContext";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -23,12 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={plusJakarta.variable}
-      >
-        <Navbar />
-      {children}
-      <Footer />
+      <body className={plusJakarta.variable}>
+        <AuthProvider>
+          <ConditionalLayout>
+            {children}
+          </ConditionalLayout>
+        </AuthProvider>
       </body>
     </html>
   );
