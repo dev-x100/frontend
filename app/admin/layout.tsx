@@ -6,9 +6,9 @@ export default function AdminLayout({
   children: React.ReactNode
 }) {
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div className="flex min-h-screen">
       <Sidebar />
-      <div style={{ flex: 1, padding: "20px" }}>
+      <div className="flex-1 p-5">
         {children}
       </div>
     </div>

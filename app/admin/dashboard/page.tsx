@@ -147,6 +147,7 @@ export function AdminShell({
     { href: "/admin/dashboard", label: "Dashboard", icon: "📊" },
     { href: "/admin/webinars", label: "Webinars", icon: "🎓" },
     { href: "/admin/createwebinar", label: "Create Webinar", icon: "➕" },
+    { href: "/admin/registrations", label: "Registrations", icon: "🧾" },
     { href: "/admin/users", label: "Users", icon: "👥" },
     { href: "/admin/contacts", label: "Messages", icon: "✉️" },
   ];

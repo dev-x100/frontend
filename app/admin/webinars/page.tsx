@@ -117,13 +117,21 @@ export default function AdminWebinarsPage() {
                       {(w._count?.registrations ?? 0)}/{w.seats}
                     </td>
                     <td className="px-5 py-4">
-                      <button
-                        onClick={() => handleDelete(w.id, w.title)}
-                        disabled={deleting === w.id}
-                        className="rounded-lg bg-red-500/20 px-3 py-1.5 text-xs font-medium text-red-400 hover:bg-red-500/30 transition-colors disabled:opacity-50"
-                      >
-                        {deleting === w.id ? "Deleting…" : "Delete"}
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <Link
+                          href={`/admin/webinars/${w.id}/edit`}
+                          className="rounded-lg bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-200 hover:bg-slate-700 transition-colors"
+                        >
+                          Edit
+                        </Link>
+                        <button
+                          onClick={() => handleDelete(w.id, w.title)}
+                          disabled={deleting === w.id}
+                          className="rounded-lg bg-red-500/20 px-3 py-1.5 text-xs font-medium text-red-400 hover:bg-red-500/30 transition-colors disabled:opacity-50"
+                        >
+                          {deleting === w.id ? "Deleting…" : "Delete"}
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

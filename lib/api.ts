@@ -67,6 +67,7 @@ export const adminApi = {
       "/admin/dashboard"
     ),
   listWebinars: () => request<{ webinars: Webinar[] }>("/admin/webinars"),
+  getWebinar: (id: string) => request<{ webinar: Webinar }>(`/admin/webinars/${id}`),
   createWebinar: (data: Partial<Webinar>) =>
     request<{ webinar: Webinar }>("/admin/webinars", {
       method: "POST",
@@ -83,7 +84,7 @@ export const adminApi = {
   deleteUser: (id: string) =>
     request<{ message: string }>(`/admin/users/${id}`, { method: "DELETE" }),
   listRegistrations: () =>
-    request<{ registrations: Registration[] }>("/admin/registrations"),
+    request<{ registrations: AdminRegistration[] }>("/admin/registrations"),
   listContacts: () => request<{ contacts: Contact[] }>("/admin/contacts"),
 };
 
@@ -146,6 +147,11 @@ export interface Registration {
   amountPaid?: number;
   paidAt?: string;
   webinar: Pick<Webinar, "id" | "title" | "speaker" | "date" | "category" | "type" | "zoomJoinUrl">;
+}
+
+export interface AdminRegistration extends Registration {
+  user: Pick<User, "id" | "name" | "email">;
+  webinar: Pick<Webinar, "id" | "title" | "date">;
 }
 
 export interface Pagination {
