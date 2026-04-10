@@ -12,7 +12,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 
 export const metadata: Metadata = {
-  title: "TunuDada | Professional Webinar Platform",
+  title: "dev-x100 | Professional Webinar Platform",
   description: "Live and on-demand webinar platform for compliance, HR, and operational excellence.",
 };
 

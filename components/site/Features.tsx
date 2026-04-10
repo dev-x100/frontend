@@ -36,7 +36,7 @@ export default function Features() {
       <section className="border-y border-slate-200 bg-slate-900 text-slate-100" id="about">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">About TunuDada</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">About dev-x100</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight">In-house research with real-world implementation support.</h2>
             <p className="mt-4 text-slate-300">
               We translate legal and policy updates into plain-language workshops, manager scripts, and action plans that teams can execute.

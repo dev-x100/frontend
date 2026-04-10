@@ -6,7 +6,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl px-6 py-4">
         <div className="flex items-center justify-between gap-6">
           <Link href="/" className="text-2xl font-bold tracking-tight text-slate-900">
-            TunuDada
+            dev-x<span className="text-amber-500">100</span>
           </Link>
 
           <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex">

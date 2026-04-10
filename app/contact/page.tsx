@@ -42,7 +42,7 @@ export default function ContactPage() {
         <div className="lg:col-span-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold text-slate-900">Support Information</h2>
           <p className="mt-4 text-sm text-slate-600">Phone: +1 (727) 474-1465</p>
-          <p className="text-sm text-slate-600">Email: support@tunudada.com</p>
+          <p className="text-sm text-slate-600">Email: support@dev-x100.com</p>
           <p className="mt-4 text-sm text-slate-600">Hours: Monday - Friday, 9:00 AM to 6:00 PM EST</p>
           <p className="mt-4 text-sm text-slate-600">Locations: Sarasota, FL and Las Vegas, NV</p>
         </div>

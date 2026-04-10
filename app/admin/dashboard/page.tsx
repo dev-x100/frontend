@@ -157,7 +157,7 @@ export function AdminShell({
       <aside className="hidden w-60 flex-col border-r border-slate-800 bg-slate-900 lg:flex">
         <div className="px-6 py-6 border-b border-slate-800">
           <Link href="/" className="text-xl font-bold text-white">
-            Tunu<span className="text-amber-400">Dada</span>
+            dev-x<span className="text-amber-400">100</span>
           </Link>
           <p className="mt-0.5 text-xs text-slate-500">Admin Panel</p>
         </div>
@@ -195,7 +195,7 @@ export function AdminShell({
       <div className="flex-1 flex flex-col min-w-0">
         <header className="flex items-center justify-between border-b border-slate-800 bg-slate-900 px-6 py-4 lg:hidden">
           <Link href="/" className="text-lg font-bold text-white">
-            Tunu<span className="text-amber-400">Dada</span>
+            dev-x<span className="text-amber-400">100</span>
             <span className="ml-2 text-xs text-slate-500">Admin</span>
           </Link>
           <button

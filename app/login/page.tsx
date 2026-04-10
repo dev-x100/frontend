@@ -39,7 +39,7 @@ export default function LoginPage() {
         <div className="mb-8 text-center">
           <Link href="/" className="inline-block">
             <span className="text-3xl font-bold tracking-tight text-white">
-              Tunu<span className="text-amber-400">Dada</span>
+              dev-x<span className="text-amber-400">100</span>
             </span>
           </Link>
           <p className="mt-2 text-sm text-slate-400">Professional Webinar Platform</p>
@@ -139,4 +139,4 @@ export default function LoginPage() {
     </div>
   );
 }
-
+
