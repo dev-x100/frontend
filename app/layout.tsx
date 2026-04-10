@@ -14,6 +14,24 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "dev-x100 | Professional Webinar Platform",
   description: "Live and on-demand webinar platform for compliance, HR, and operational excellence.",
+  metadataBase: new URL("https://dev-x100.com"),
+  openGraph: {
+    title: "dev-x100 | Professional Webinar Platform",
+    description: "Live and on-demand webinar platform for compliance, HR, and operational excellence.",
+    url: "https://dev-x100.com",
+    siteName: "dev-x100",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "dev-x100 | Professional Webinar Platform",
+    description: "Live and on-demand webinar platform for compliance, HR, and operational excellence.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

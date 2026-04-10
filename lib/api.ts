@@ -151,7 +151,7 @@ export interface Registration {
 
 export interface AdminRegistration extends Registration {
   user: Pick<User, "id" | "name" | "email">;
-  webinar: Pick<Webinar, "id" | "title" | "date">;
+  webinar: Pick<Webinar, "id" | "title" | "speaker" | "date" | "category" | "type" | "zoomJoinUrl">;
 }
 
 export interface Pagination {

@@ -1,6 +1,25 @@
-import Link from "next/link"
+"use client";
+import { useState, FormEvent } from "react";
+import Link from "next/link";
+import { contactApi } from "@/lib/api";
 
 export default function Footer() {
+  const [nlEmail, setNlEmail] = useState("");
+  const [nlStatus, setNlStatus] = useState<"idle" | "loading" | "ok" | "error">("idle");
+
+  async function handleSubscribe(e: FormEvent) {
+    e.preventDefault();
+    if (!nlEmail) return;
+    setNlStatus("loading");
+    try {
+      await contactApi.subscribe(nlEmail);
+      setNlStatus("ok");
+      setNlEmail("");
+    } catch {
+      setNlStatus("error");
+    }
+  }
+
   return (
     <footer className="border-t border-slate-800 bg-slate-950 text-slate-100">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
@@ -34,19 +53,25 @@ export default function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">Get Updates</h3>
           <p className="mt-4 text-sm text-slate-300">Receive webinar alerts and regulatory insights once a week.</p>
-          <form className="mt-4 flex gap-2">
+          <form onSubmit={handleSubscribe} className="mt-4 flex gap-2">
             <input
               type="email"
+              required
+              value={nlEmail}
+              onChange={(e) => { setNlEmail(e.target.value); setNlStatus("idle"); }}
               placeholder="Work email"
               className="w-full rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-100 outline-none ring-amber-400 placeholder:text-slate-500 focus:ring"
             />
             <button
-              type="button"
-              className="rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-amber-300"
+              type="submit"
+              disabled={nlStatus === "loading"}
+              className="rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-amber-300 disabled:opacity-60"
             >
-              Join
+              {nlStatus === "loading" ? "…" : "Join"}
             </button>
           </form>
+          {nlStatus === "ok" && <p className="mt-2 text-xs text-green-400">✓ Subscribed!</p>}
+          {nlStatus === "error" && <p className="mt-2 text-xs text-red-400">Something went wrong. Try again.</p>}
         </div>
       </div>
 
@@ -60,5 +85,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
